@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/todo.css">
+    <title>To do list</title>
+    <script src="https://kit.fontawesome.com/3943ac4422.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="card">
+    <h1> TODO List</h1>
+    <section class="container">
+        {{if ne .Error ""}} 
+        <p style="color: red; margin-bottom: 6px;"> {{.Error}} </p>
+    {{end}}
+        <div class="form-container">
+            <form action="/addTask" method="POST">
+                <input type="text" class="todo-input" placeholder="type something here" name="task"/>
+              <button class="todo-button" type="submit">
+                    <i class="fas fa-plus-circle"></i>
+                </button>
+            </form>
+    </section>
+    <section>
+        <div class="todo-container">
+            <ul class="todoList">
+                {{range $task := .Tasks }} 
+                    <div class="todo-containers" onclick="location.href ='/completeTask/{{$task.ID}}'">
+                        <input type="text" class="todo" value="{{$task.Text}}"
+                         {{if $task.IsCompleted }} style="background-color: rgb(188, 203, 248); text-decoration: line-through;" {{end}}>
+                        <span class="span">
+                            <span><a href="/deleteTask/{{$task.ID}}"><i class="fas fa-trash-alt"></i></a></span>
+                        </span>
+                    </div>
+                {{end}}
+            </ul>
+        </div>
+    </section>
+    </div>
+</body>
+</html>

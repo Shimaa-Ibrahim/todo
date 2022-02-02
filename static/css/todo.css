@@ -1,0 +1,141 @@
+@import url("font/IRANYekanRegular.ttf");
+
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "iranYekan";
+  list-style: none;
+}
+
+/* variables */
+:root {
+  --primaryColor: #25035c;
+  --secondaryColor: #ede9fe;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #7c7c7c;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+  --mainRed: red;
+  --bodyColor: #f6f6f6;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  flex-direction: column;
+  background-color: var(--bodyColor);
+  margin-top: 20vh;
+}
+h1 {
+  height: 8vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.form-container {
+  display: flex;
+}
+form {
+  width: 25rem;
+  border-radius: 6px;
+  background-color: var(--mainWhite);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+form input {
+  flex: 1;
+}
+form input,
+form button {
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background-color: var(--mainWhite);
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+form button {
+  color: var(--primaryColor);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+form button:hover {
+  background-color: var(--primaryColor);
+  color: var(--mainWhite);
+}
+.todo-container {
+  width: 25rem;
+}
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.3rem 0;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--secondaryColor);
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background-color: var(--mainWhite);
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: var(--primaryColor);
+  font-weight: bold;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.todo-containers {
+  position: relative;
+}
+.span {
+  position: absolute;
+  right: 5px;
+  top: calc(5%);
+  font-size: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.fa-check-square {
+  color: var(--primaryColor);
+}
+.fa-trash-alt {
+  color: var(--mainRed);
+}
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+i {
+  margin: auto 2px;
+}
+
+i:hover {
+  background-color: rgb(240, 238, 238);
+  border-radius: 50%;
+}
+
+input.todo {
+  cursor: pointer !important;
+}

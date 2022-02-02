@@ -1,0 +1,8 @@
+development:
+    driver: $DB_DRIVER
+    open: $DATABASE_URL
+
+
+environment_variable_config:
+    driver: $DB_DRIVER
+    open: $DATABASE_URL
